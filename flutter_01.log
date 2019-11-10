@@ -1,0 +1,90 @@
+Flutter crash report; please file at https://github.com/flutter/flutter/issues.
+
+## command
+
+flutter create --ios-language swift --android-language kotlin .
+
+## exception
+
+YamlException: Error on line 27, column 3: Expected a key while parsing a block mapping.
+   ╷
+27 │   cupertino_icons: ^0.1.2
+   │   ^
+   ╵
+
+```
+#0      Parser._parseBlockMappingKey (package:yaml/src/parser.dart:441:5)
+#1      Parser._stateMachine (package:yaml/src/parser.dart:86:16)
+#2      Parser.parse (package:yaml/src/parser.dart:47:19)
+#3      Loader._loadMapping (package:yaml/src/loader.dart:169:23)
+#4      Loader._loadNode (package:yaml/src/loader.dart:86:16)
+#5      Loader._loadDocument (package:yaml/src/loader.dart:62:20)
+#6      Loader.load (package:yaml/src/loader.dart:54:20)
+#7      loadYamlDocument (package:yaml/yaml.dart:51:25)
+#8      loadYamlNode (package:yaml/yaml.dart:42:5)
+#9      loadYaml (package:yaml/yaml.dart:34:5)
+#10     _pluginFromPubspec (package:flutter_tools/src/plugins.dart:70:27)
+#11     findPlugins.<anonymous closure> (package:flutter_tools/src/plugins.dart:93:27)
+#12     _LinkedHashMapMixin.forEach (dart:collection-patch/compact_hash.dart:377:8)
+#13     findPlugins (package:flutter_tools/src/plugins.dart:91:12)
+#14     refreshPluginsList (package:flutter_tools/src/plugins.dart:340:32)
+#15     FlutterProject.ensureReadyForPlatformSpecificTooling (package:flutter_tools/src/project.dart:198:5)
+<asynchronous suspension>
+#16     CreateCommand._generateApp (package:flutter_tools/src/commands/create.dart:557:21)
+<asynchronous suspension>
+#17     CreateCommand.runCommand (package:flutter_tools/src/commands/create.dart:397:37)
+<asynchronous suspension>
+#18     FlutterCommand.verifyThenRunCommand (package:flutter_tools/src/runner/flutter_command.dart:490:18)
+#19     _asyncThenWrapperHelper.<anonymous closure> (dart:async-patch/async_patch.dart:71:64)
+#20     _rootRunUnary (dart:async/zone.dart:1132:38)
+#21     _CustomZone.runUnary (dart:async/zone.dart:1029:19)
+#22     _FutureListener.handleValue (dart:async/future_impl.dart:137:18)
+#23     Future._propagateToListeners.handleValueCallback (dart:async/future_impl.dart:678:45)
+#24     Future._propagateToListeners (dart:async/future_impl.dart:707:32)
+#25     Future._completeWithValue (dart:async/future_impl.dart:522:5)
+#26     Future._asyncComplete.<anonymous closure> (dart:async/future_impl.dart:552:7)
+#27     _rootRun (dart:async/zone.dart:1124:13)
+#28     _CustomZone.run (dart:async/zone.dart:1021:19)
+#29     _CustomZone.runGuarded (dart:async/zone.dart:923:7)
+#30     _CustomZone.bindCallbackGuarded.<anonymous closure> (dart:async/zone.dart:963:23)
+#31     _microtaskLoop (dart:async/schedule_microtask.dart:41:21)
+#32     _startMicrotaskLoop (dart:async/schedule_microtask.dart:50:5)
+#33     _Timer._runTimers (dart:isolate-patch/timer_impl.dart:391:30)
+#34     _Timer._handleMessage (dart:isolate-patch/timer_impl.dart:416:5)
+#35     _RawReceivePortImpl._handleMessage (dart:isolate-patch/isolate_patch.dart:172:12)
+```
+
+## flutter doctor
+
+```
+[✓] Flutter (Channel stable, v1.9.1+hotfix.2, on Microsoft Windows [Version 10.0.18362.418], locale id-ID)
+    • Flutter version 1.9.1+hotfix.2 at D:\Data Kuliah\Semester V\Visual 3\Flutter\flutter_windows_v1.9.1+hotfix.2-stable\flutter
+    • Framework revision 2d2a1ffec9 (9 weeks ago), 2019-09-06 18:39:49 -0700
+    • Engine revision b863200c37
+    • Dart version 2.5.0
+
+[!] Android toolchain - develop for Android devices (Android SDK version 29.0.1)
+    • Android SDK at C:\Android\sdk
+    • Android NDK location not configured (optional; useful for native profiling support)
+    • Platform android-29, build-tools 29.0.1
+    • ANDROID_HOME = C:\Android\sdk
+    • ANDROID_SDK_ROOT = C:\Android\sdk
+    • Java binary at: C:\Program Files\Android\Android Studio\jre\bin\java
+    • Java version OpenJDK Runtime Environment (build 1.8.0_202-release-1483-b03)
+    ! Some Android licenses not accepted.  To resolve this, run: flutter doctor --android-licenses
+
+[✓] Android Studio (version 3.5)
+    • Android Studio at C:\Program Files\Android\Android Studio
+    • Flutter plugin version 39.0.3
+    • Dart plugin version 191.8423
+    • Java version OpenJDK Runtime Environment (build 1.8.0_202-release-1483-b03)
+
+[✓] VS Code (version 1.40.0)
+    • VS Code at C:\Users\User\AppData\Local\Programs\Microsoft VS Code
+    • Flutter extension version 3.6.0
+
+[!] Connected device
+    ! No devices available
+
+! Doctor found issues in 2 categories.
+```
